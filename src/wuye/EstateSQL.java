@@ -187,12 +187,13 @@ public class EstateSQL {
     }
     boolean addOwner(int RoomNumber,String Password,String Name,String Mobile,String sex){ //添加业主
         boolean tag = true;
-        String sql = "INSERT INTO owner (Room_number, pwd,mobile,Room_name,sex) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+",'"+sex+")";
+        String sql = "INSERT INTO owner (Room_number, pwd,mobile,Room_name,sex) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+",'"+sex+"')";
         try {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             tag = false;
             System.out.println("Owner添加失败！");
+            e.printStackTrace();
         }
         return tag;
     }

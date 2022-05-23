@@ -1,17 +1,15 @@
 package wuye;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class Alltable extends JFrame {
+public class All_Table extends JFrame {
 
 	private JPanel contentPane;
-	static Alltable frame4 = new Alltable();
+	static All_Table frame4 = new All_Table();
 	private JButton btnNewButton;
 	/**
 	 * Launch the application.
@@ -73,8 +71,8 @@ public class Alltable extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInterface1 mainInterface1=new MainInterface1();
-				mainInterface1.run();
+				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
+				administratorMain.run();
 				frame4.dispose();
 			}
 		});

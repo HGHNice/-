@@ -1,8 +1,5 @@
 package wuye;
 
-import Dao.user.User;
-import Dao.user.UserDaoImpl;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,8 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class register extends JFrame {
-
+public class Register_Window extends JFrame {
+	EstateSQL estateSQL;
 	private JPanel contentPane;
 	private JTextField name;
 	private JTextField pwd;
@@ -19,7 +16,12 @@ public class register extends JFrame {
 	private JTextField Room_number;
 	private JTextField sextext;
 	private JButton btnNewButton;
-	static register frame5 = new register();
+	Register_Window(EstateSQL es){
+		estateSQL = es;
+	}
+	Register_Window(){
+	}
+	static Register_Window frame5 = new Register_Window();
 	/**
 	 * Launch the application.
 	 */
@@ -101,7 +103,7 @@ public class register extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInterface mainInterface=new MainInterface();
+				Login_Window mainInterface=new Login_Window(estateSQL);
 				mainInterface.run();
 				frame5.dispose();
 			}
@@ -119,7 +121,7 @@ public class register extends JFrame {
 					mobile.setEditable(false);
 					Room_number.setEditable(false);
 				}else if (flag==0){
-					EstateSQL estateSQL = new EstateSQL("hghnb","114514");
+					estateSQL = new EstateSQL("hghnb","114514");
 					estateSQL.initConnection();
 					if (estateSQL.addOwner(Integer.parseInt(Room_number.getText()),pwd.getText(),name.getText(),mobile.getText(),sextext.getText())){
 						JOptionPane.showMessageDialog(null,"保存成功","提示窗口",JOptionPane.WARNING_MESSAGE);

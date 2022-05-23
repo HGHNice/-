@@ -6,12 +6,12 @@ import javax.swing.border.TitledBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainInterface2 extends JFrame {
+public class User_Main_Window extends JFrame {
     JButton btnNewButton;
     JButton btnNewButton_1;
     JButton btnNewButton_2;
     JButton btnNewButton_4;
-    static MainInterface2 frame2=new MainInterface2();
+    static User_Main_Window frame2=new User_Main_Window();
     private JPanel contentPane;
     public void run() {
         try {
@@ -37,7 +37,7 @@ public class MainInterface2 extends JFrame {
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserWindow user=new UserWindow();
+                User_Window user=new User_Window();
                 user.run();
                 frame2.dispose();
             }
@@ -49,8 +49,8 @@ public class MainInterface2 extends JFrame {
         btnNewButton_2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Payment payment=new Payment();
-                payment.run();
+                Payment_Window paymentWindow =new Payment_Window();
+                paymentWindow.run();
                 frame2.dispose();
             }
         });
@@ -61,8 +61,8 @@ public class MainInterface2 extends JFrame {
         btnNewButton_4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainInterface mainInterface1=new MainInterface();
-                MainInterface.run();
+                Login_Window mainInterface1=new Login_Window();
+                Login_Window.run();
                 frame2.dispose();
             }
         });

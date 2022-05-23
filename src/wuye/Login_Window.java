@@ -8,14 +8,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-public class MainInterface extends JFrame implements ActionListener {
+public class Login_Window extends JFrame implements ActionListener {
+	EstateSQL estateSQL;
 	JComboBox comboBox;
 	JButton btnNewButton_3;
 	JButton btnNewButton_8;
 	private JPanel contentPane;
-	static MainInterface frame = new MainInterface();
+	static Login_Window frame = new Login_Window();
 	private JPasswordField passwordField;
-
+	Login_Window(){
+		estateSQL = new EstateSQL("hghnb","114514");
+		estateSQL.initConnection();
+	}
+	Login_Window(EstateSQL es){
+		estateSQL = es;
+	}
 	public static void run() {
 		try {
 			frame.init();
@@ -59,8 +66,6 @@ public class MainInterface extends JFrame implements ActionListener {
 		panel.add(lblNewLabel_2);
 
 		comboBox = new JComboBox();
-		EstateSQL estateSQL = new EstateSQL("hghnb","114514");
-		estateSQL.initConnection();
 		comboBox.setModel(new DefaultComboBoxModel(estateSQL.getOwnerIde()));
 		comboBox.setForeground(Color.BLACK);
 		comboBox.setToolTipText("");
@@ -86,12 +91,11 @@ public class MainInterface extends JFrame implements ActionListener {
 		btnNewButton_3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				register zhuce = new register();
+				Register_Window zhuce = new Register_Window(estateSQL);
 				zhuce.run();
 				frame.dispose();
 			}
 		});
-
 		btnNewButton_8 = new JButton("");//确认按钮
 		btnNewButton_8.setBounds(636, 278, 97, 23);
 		contentPane.add(btnNewButton_8); // 每个按钮的功能以及监视器
@@ -100,22 +104,20 @@ public class MainInterface extends JFrame implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		EstateSQL estateSQL = new EstateSQL("hghnb","114514");
-		estateSQL.initConnection();
 		try {
 			if (String.valueOf(passwordField.getPassword()).equals("")){
 				JOptionPane.showMessageDialog(null, "请输入密码");
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))){     //如果登录成功打开新页面并且释放此页面
-				MainInterface1 mainInterface1=new MainInterface1();
-				MainInterface2 mainInterface2=new MainInterface2();
+				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
+				User_Main_Window userMain =new User_Main_Window();
 				JOptionPane.showMessageDialog(null,"登陆成功！");
 				/*if(){
-					mainInterface2.run();
+					userMain.run();
 				}else{
-					mainInterface1.run();
+					administratorMain.run();
 				}*/
-				mainInterface2.run();
-				//mainInterface1.run();
+				userMain.run();
+				//administratorMain.run();
 				frame.dispose();
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))==false){
 				JOptionPane.showMessageDialog(null,"账号或密码错误！");

@@ -6,12 +6,12 @@ import javax.swing.border.TitledBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainInterface1 extends JFrame {
+public class Administrator_Main_Window extends JFrame {
 	JButton btnNewButton;
 	JButton btnNewButton_1;
 	JButton btnNewButton_2;
 	JButton btnNewButton_4;
-	static MainInterface1 frame1=new MainInterface1();
+	static Administrator_Main_Window frame1=new Administrator_Main_Window();
 	private JPanel contentPane;
 	public void run() {
 		try {
@@ -37,7 +37,7 @@ public class MainInterface1 extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			UserWindow user=new UserWindow();
+			User_Window user=new User_Window();
 			user.run();
 			frame1.dispose();
 			}
@@ -49,8 +49,8 @@ public class MainInterface1 extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Watertable watertable=new Watertable();
-				watertable.run();
+				Water_Table waterTable =new Water_Table();
+				waterTable.run();
 				frame1.dispose();
 			}
 		});
@@ -62,8 +62,8 @@ public class MainInterface1 extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Payment payment=new Payment();
-				payment.run();
+				Payment_Window paymentWindow =new Payment_Window();
+				paymentWindow.run();
 				frame1.dispose();
 			}
 		});
@@ -73,8 +73,8 @@ public class MainInterface1 extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Alltable alltable=new Alltable();
-				alltable.run();
+				All_Table allTable =new All_Table();
+				allTable.run();
 				frame1.dispose();
 			}
 		});
@@ -84,8 +84,8 @@ public class MainInterface1 extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInterface mainInterface1=new MainInterface();
-				MainInterface.run();
+				Login_Window mainInterface1=new Login_Window();
+				Login_Window.run();
 				frame1.dispose();
 			}
 		});

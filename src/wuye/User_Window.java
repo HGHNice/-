@@ -1,14 +1,12 @@
 package wuye;
 
-import Dao.user.User;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class UserWindow extends JFrame {
+public class User_Window extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userName;
@@ -16,7 +14,7 @@ public class UserWindow extends JFrame {
 	private JTextField mobile;
 	private JTextField RommNumber;
 	private JButton btnNewButton;
-	static UserWindow frame3 = new UserWindow();
+	static User_Window frame3 = new User_Window();
 	/**
 	 * Launch the application.
 	 */
@@ -97,8 +95,8 @@ public class UserWindow extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainInterface1 mainInterface1=new MainInterface1();
-				mainInterface1.run();
+				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
+				administratorMain.run();
 				frame3.dispose();
 			}
 		});
