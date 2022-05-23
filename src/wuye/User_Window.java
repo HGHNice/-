@@ -12,6 +12,7 @@ public class User_Window extends JFrame {
 	private JTextField userName;
 	private JTextField sex;
 	private JTextField mobile;
+	private JTextField FS;
 	private JTextField RommNumber;
 	private JButton btnNewButton;
 	static User_Window frame3 = new User_Window();
@@ -45,7 +46,7 @@ public class User_Window extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		userName = new JTextField();//姓名文本框
-		userName.setBounds(102, 50, 155, 21);
+		userName.setBounds(102, 67, 155, 21);
 		contentPane.add(userName);
 		userName.setColumns(10);
 		userName.setEditable(false);//文本框可否编辑
@@ -55,7 +56,7 @@ public class User_Window extends JFrame {
 		contentPane.add(lblNewLabel_1);
 
 		sex = new JTextField();
-		sex.setBounds(102, 89, 155, 21);
+		sex.setBounds(102, 117, 155, 21);
 		contentPane.add(sex);
 		sex.setColumns(10);
 		sex.setEditable(false);//文本框可否编辑
@@ -66,7 +67,7 @@ public class User_Window extends JFrame {
 		
 		mobile = new JTextField();
 		mobile.setColumns(10);
-		mobile.setBounds(102, 136, 155, 21);
+		mobile.setBounds(102, 167, 155, 21);
 		contentPane.add(mobile);
 		mobile.setEditable(false);//文本框可否编辑
 		
@@ -76,9 +77,19 @@ public class User_Window extends JFrame {
 		
 		RommNumber = new JTextField();
 		RommNumber.setColumns(10);
-		RommNumber.setBounds(102, 176, 155, 21);
+		RommNumber.setBounds(102, 216, 155, 21);
 		contentPane.add(RommNumber);
 		RommNumber.setEditable(false);//文本框可否编辑
+
+		JLabel lblNewLabel_1_3 = new JLabel("家庭成员：");
+		lblNewLabel_1_3.setBounds(20, 250, 100, 50);
+		contentPane.add(lblNewLabel_1_3);
+
+		FS = new JTextField();//姓名文本框
+		FS.setBounds(102, 267, 155, 21);
+		contentPane.add(FS);
+		FS.setColumns(10);
+		FS.setEditable(false);//文本框可否编辑
 
 		//获取用户信息
 //		User user = new User();
