@@ -10,13 +10,7 @@ import java.sql.SQLException;
 
 public class MainInterface extends JFrame implements ActionListener {
 	JComboBox comboBox;
-	JButton btnNewButton;
-	JButton btnNewButton_1;
-	JButton btnNewButton_2;
 	JButton btnNewButton_3;
-	JButton btnNewButton_4;
-	JButton btnNewButton_5;
-	JButton btnNewButton_6;
 	JButton btnNewButton_8;
 	private JPanel contentPane;
 	static MainInterface frame = new MainInterface();
@@ -86,18 +80,6 @@ public class MainInterface extends JFrame implements ActionListener {
 		passwordField.setBounds(138, 114, 123, 21);
 		panel.add(passwordField);
 
-		/*JButton btnNewButton = new JButton("");
-		btnNewButton.setBounds(38, 98, 97, 23);
-		contentPane.add(btnNewButton);
-
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBounds(38, 159, 97, 23);
-		contentPane.add(btnNewButton_1);
-
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setBounds(38, 216, 97, 23);
-		contentPane.add(btnNewButton_2);*/
-
 		btnNewButton_3 = new JButton("");//注册按钮
 		btnNewButton_3.setBounds(68, 275, 97, 23);
 		contentPane.add(btnNewButton_3);
@@ -110,29 +92,12 @@ public class MainInterface extends JFrame implements ActionListener {
 			}
 		});
 
-		/*JButton btnNewButton_4 = new JButton("");
-		btnNewButton_4.setBounds(636, 98, 97, 23);
-		contentPane.add(btnNewButton_4);
-
-		JButton btnNewButton_5 = new JButton("");
-		btnNewButton_5.setBounds(636, 159, 97, 23);
-		contentPane.add(btnNewButton_5);
-
-		JButton btnNewButton_6 = new JButton("");
-		btnNewButton_6.setBounds(636, 216, 97, 23);
-		contentPane.add(btnNewButton_6);*/
-
-		btnNewButton_8 = new JButton("");
+		btnNewButton_8 = new JButton("");//确认按钮
 		btnNewButton_8.setBounds(636, 278, 97, 23);
 		contentPane.add(btnNewButton_8); // 每个按钮的功能以及监视器
-
 		frame.setLocationRelativeTo(null);
-
 		btnNewButton_8.addActionListener(this);
-
-
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		EstateSQL estateSQL = new EstateSQL("hghnb","114514");
@@ -142,8 +107,15 @@ public class MainInterface extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "请输入密码");
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))){     //如果登录成功打开新页面并且释放此页面
 				MainInterface1 mainInterface1=new MainInterface1();
+				MainInterface2 mainInterface2=new MainInterface2();
 				JOptionPane.showMessageDialog(null,"登陆成功！");
-				mainInterface1.run();
+				/*if(){
+					mainInterface2.run();
+				}else{
+					mainInterface1.run();
+				}*/
+				mainInterface2.run();
+				//mainInterface1.run();
 				frame.dispose();
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))==false){
 				JOptionPane.showMessageDialog(null,"账号或密码错误！");

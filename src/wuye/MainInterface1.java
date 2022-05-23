@@ -10,11 +10,7 @@ public class MainInterface1 extends JFrame {
 	JButton btnNewButton;
 	JButton btnNewButton_1;
 	JButton btnNewButton_2;
-	JButton btnNewButton_3;
 	JButton btnNewButton_4;
-	JButton btnNewButton_5;
-	JButton btnNewButton_6;
-	JButton btnNewButton_7;
 	static MainInterface1 frame1=new MainInterface1();
 	private JPanel contentPane;
 	public void run() {
@@ -71,11 +67,6 @@ public class MainInterface1 extends JFrame {
 				frame1.dispose();
 			}
 		});
-
-		/*btnNewButton_3 = new JButton("");
-		btnNewButton_3.setBounds(60, 310, 108, 35);
-		contentPane.add(btnNewButton_3);*/
-
 		btnNewButton_4 = new JButton("");  //总体统计按钮
 		btnNewButton_4.setBounds(620, 200, 108, 35);
 		contentPane.add(btnNewButton_4);
@@ -87,31 +78,6 @@ public class MainInterface1 extends JFrame {
 				frame1.dispose();
 			}
 		});
-
-		/*btnNewButton_5 = new JButton("");   //修改密码
-		btnNewButton_5.setBounds(635, 138, 108, 35);
-		contentPane.add(btnNewButton_5);
-		btnNewButton_5.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			ChangePassword changePassword=new ChangePassword();
-			changePassword.run();
-			frame1.dispose();
-			}
-		});
-
-		btnNewButton_6 = new JButton("");   //历史数据
-		btnNewButton_6.setBounds(635, 219, 108, 35);
-		contentPane.add(btnNewButton_6);
-		btnNewButton_6.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Historicaldata historicaldata=new Historicaldata();
-				historicaldata.run();
-				frame1.dispose();
-			}
-		});*/
-
 		btnNewButton_4 = new JButton("");//返回系统
 		btnNewButton_4.setBounds(80, 300, 108, 35);
 		contentPane.add(btnNewButton_4);
@@ -151,24 +117,8 @@ public class MainInterface1 extends JFrame {
 		lblNewLabel_4.setBounds(7, 250, 72, 26);
 		panel.add(lblNewLabel_4);
 
-		/*JLabel lblNewLabel_5 = new JLabel("\u5386\u53F2\u6570\u636E\u67E5\u8BE2\u300B");
-		lblNewLabel_5.setBounds(285, 168, 84, 26);
-		panel.add(lblNewLabel_5);
-
-		JLabel lblNewLabel_6 = new JLabel("\u9000\u51FA\u7CFB\u7EDF\u300B");
-		lblNewLabel_6.setBounds(297, 246, 72, 26);
-		panel.add(lblNewLabel_6);
-
-		JLabel lblNewLabel_7 = new JLabel("\u8BF7\u9009\u62E9\u76F8\u5E94\u529F\u80FD\uFF01");
-		lblNewLabel_7.setBounds(133, 26, 96, 15);
-		panel.add(lblNewLabel_7);*/
-
 		frame1.setLocationRelativeTo(null);
-
 	}
-
-
-
-	}
+}
 
 

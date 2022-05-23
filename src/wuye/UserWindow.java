@@ -16,16 +16,16 @@ public class UserWindow extends JFrame {
 	private JTextField mobile;
 	private JTextField RommNumber;
 	private JButton btnNewButton;
-	static UserWindow frame1 = new UserWindow();
+	static UserWindow frame3 = new UserWindow();
 	/**
 	 * Launch the application.
 	 */
 
 	public void run() {
 		try {
-			frame1.init();
-			frame1.setVisible(true);
-			frame1.setLocationRelativeTo(null);
+			frame3.init();
+			frame3.setVisible(true);
+			frame3.setLocationRelativeTo(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -99,7 +99,7 @@ public class UserWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MainInterface1 mainInterface1=new MainInterface1();
 				mainInterface1.run();
-				frame1.dispose();
+				frame3.dispose();
 			}
 		});
 	}
