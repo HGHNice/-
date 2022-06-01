@@ -19,20 +19,12 @@ public class Register_Window extends JFrame {
 	Register_Window(EstateSQL es){
 		estateSQL = es;
 	}
-	Register_Window(){
-	}
-	static Register_Window frame5 = new Register_Window();
 	/**
 	 * Launch the application.
 	 */
 	public void run() {
-		try {
-			frame5.init();
-			frame5.setLocationRelativeTo(null);
-			frame5.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		setVisible(true);
+		setLocationRelativeTo(null);
 	}
 	/**
 	 * Create the frame.
@@ -40,7 +32,7 @@ public class Register_Window extends JFrame {
 	void init() {
 		setTitle("注册");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 511);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,68 +40,77 @@ public class Register_Window extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("业主姓名：");
-		lblNewLabel.setBounds(20, 45, 83, 30);
+		lblNewLabel.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel.setBounds(250, 50, 100, 50);
 		contentPane.add(lblNewLabel);
 
 		name = new JTextField();//姓名文本框
-		name.setBounds(102, 50, 155, 21);
+		name.setBounds(350,63, 155, 25);
 		contentPane.add(name);
 		name.setColumns(10);
 		name.setEditable(true);//文本框可否编辑
 
 		JLabel lblNewLabel_1 = new JLabel("密码：");
-		lblNewLabel_1.setBounds(20, 84, 83, 30);
+		lblNewLabel_1.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_1.setBounds(250, 100, 100, 50);
 		contentPane.add(lblNewLabel_1);
 
 		pwd = new JTextField();
-		pwd.setBounds(102, 89, 155, 21);
+		pwd.setBounds(350, 113, 155, 25);
 		contentPane.add(pwd);
 		pwd.setColumns(10);
 		pwd.setEditable(true);//文本框可否编辑
 
-		JLabel lblNewLabel_1_1 = new JLabel("联系电话：");
-		lblNewLabel_1_1.setBounds(20, 131, 83, 30);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel lblNewLabel_2 = new JLabel("联系电话：");
+		lblNewLabel_2.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_2.setBounds(250, 150, 100, 50);
+		contentPane.add(lblNewLabel_2);
 
 		mobile = new JTextField();
 		mobile.setColumns(10);
-		mobile.setBounds(102, 136, 155, 21);
+		mobile.setBounds(350, 163, 155, 25);
 		contentPane.add(mobile);
 		mobile.setEditable(true);//文本框可否编辑
 
-		JLabel lblNewLabel_1_2 = new JLabel("楼门牌号：");
-		lblNewLabel_1_2.setBounds(20, 171, 83, 30);
-		contentPane.add(lblNewLabel_1_2);
+		JLabel lblNewLabel_3 = new JLabel("楼门牌号：");
+		lblNewLabel_3.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_3.setBounds(250, 200, 100, 50);
+		contentPane.add(lblNewLabel_3);
 
 		Room_number = new JTextField();
 		Room_number.setColumns(10);
-		Room_number.setBounds(102, 176, 155, 21);
+		Room_number.setBounds(350, 213, 155, 25);
 		contentPane.add(Room_number);
 		Room_number.setEditable(true);//文本框可否编辑
 
-		JLabel sex = new JLabel("性别：");
-		sex.setBounds(46, 190, 83, 30);
-		contentPane.add(sex);
+		JLabel lblNewLabel_4 = new JLabel("性别：");
+		lblNewLabel_4.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_4.setBounds(250, 250, 100, 50);
+		contentPane.add(lblNewLabel_4);
 
 		sextext = new JTextField();
 		sextext.setColumns(10);
-		sextext.setBounds(102, 200, 155, 21);
+		sextext.setBounds(350, 263, 155, 25);
 		contentPane.add(sextext);
 		sextext.setEditable(true);//文本框可否编辑
 
-		btnNewButton = new JButton("返回");//返回
-		btnNewButton.setBounds(20, 230, 93, 23);
+		//返回按钮
+		btnNewButton = new JButton("返回");
+		btnNewButton.setBounds(20, 400, 100, 35);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Login_Window mainInterface=new Login_Window(estateSQL);
-				mainInterface.run();
-				frame5.dispose();
+				Login_Window login_window = new Login_Window(estateSQL);
+				login_window.init();
+				login_window.run();
+				Register_Window.super.dispose();
 			}
 		});
-		btnNewButton = new JButton("保存");//保存按钮
-		btnNewButton.setBounds(300, 230, 93, 23);
+
+		//保存按钮
+		btnNewButton = new JButton("保存");
+		btnNewButton.setBounds(650, 400, 100, 35);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
@@ -134,8 +135,9 @@ public class Register_Window extends JFrame {
 			}
 		});
 
-		btnNewButton = new JButton("清空");//清空按钮
-		btnNewButton.setBounds(300, 200, 93, 23);
+		//清空按钮
+		btnNewButton = new JButton("清空");
+		btnNewButton.setBounds(650, 300, 100, 35);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override

@@ -13,30 +13,15 @@ public class Login_Window extends JFrame implements ActionListener {
 	JComboBox comboBox;
 	JButton btnNewButton_3;
 	JButton btnNewButton_8;
-	private JPanel contentPane;
-	static Login_Window frame = new Login_Window();
+	private JPanel contentPane = new JPanel();
 	private JPasswordField passwordField;
-	Login_Window(){
-		estateSQL = new EstateSQL("hghnb","114514");
-		estateSQL.initConnection();
+	Login_Window(EstateSQL estateSQL){
+		this.estateSQL = estateSQL;
 	}
-	Login_Window(EstateSQL es){
-		estateSQL = es;
-	}
-	public static void run() {
-		try {
-			frame.init();
-			frame.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	void init() {
 		setTitle("物业管理系统");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
-		contentPane = new JPanel();
 		contentPane.setForeground(Color.LIGHT_GRAY);
 		contentPane.setToolTipText("");
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -91,15 +76,17 @@ public class Login_Window extends JFrame implements ActionListener {
 		btnNewButton_3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Register_Window zhuce = new Register_Window(estateSQL);
-				zhuce.run();
-				frame.dispose();
+				Register_Window register_window = new Register_Window(estateSQL);
+				register_window.init();
+				register_window.run();
+				Login_Window.super.dispose();
 			}
 		});
+
 		btnNewButton_8 = new JButton("");//确认按钮
 		btnNewButton_8.setBounds(636, 278, 97, 23);
 		contentPane.add(btnNewButton_8); // 每个按钮的功能以及监视器
-		frame.setLocationRelativeTo(null);
+		setLocationRelativeTo(null);
 		btnNewButton_8.addActionListener(this);
 	}
 	@Override
@@ -108,23 +95,31 @@ public class Login_Window extends JFrame implements ActionListener {
 			if (String.valueOf(passwordField.getPassword()).equals("")){
 				JOptionPane.showMessageDialog(null, "请输入密码");
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))){     //如果登录成功打开新页面并且释放此页面
-				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-				User_Main_Window userMain =new User_Main_Window();
+				Administrator_Main_Window administrator_Main_Window =new Administrator_Main_Window(estateSQL);
+				User_Main_Window user_Main_Window =new User_Main_Window(estateSQL);
+				user_Main_Window.init();
+				//administrator_Main_Window.init();
+				dispose();
 				JOptionPane.showMessageDialog(null,"登陆成功！");
 				/*if(){
-					userMain.run();
+					user_Main_Window.run();
 				}else{
-					administratorMain.run();
+					administrator_Main_Window.run();
 				}*/
-				userMain.run();
-				//administratorMain.run();
-				frame.dispose();
+				user_Main_Window.run();
+				//administrator_Main_Window.run();
 			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))==false){
 				JOptionPane.showMessageDialog(null,"账号或密码错误！");
 			}
 		} catch (SQLException ex) {
 			throw new RuntimeException(ex);
 		}
+	}
+	void run(){
+		setVisible(true);
+	}
+	void stop(){
+		setVisible(false);
 	}
 }
 

@@ -230,7 +230,7 @@ public class EstateSQL {
         return tag;
     }
     //获取业主信息
-    public void getinfo(String id){
+    public User getinfo(String id){
         ResultSet rs = null;
         String sql = "SELECT * FROM owner WHERE Room_number = '"+id+"'";
         try {
@@ -243,11 +243,13 @@ public class EstateSQL {
             while (rs.next()) {
                 user.setUser_account(rs.getString("Room_name"));
                 user.setSex(rs.getString("sex"));
-                user.setMobile_phone("mobile");
-                user.setRoom_number(Integer.valueOf("Room_number"));
+                user.setRoom_name(rs.getString("Room_name"));
+                user.setMobile_phone(rs.getString("mobile"));
+                user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return user;
     }
 }
