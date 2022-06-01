@@ -106,9 +106,6 @@ public class User_Window extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-				administratorMain.run();
-				frame3.dispose();
 			}
 		});
 	}

@@ -8,18 +8,15 @@ import java.awt.event.ActionListener;
 
 public class User_Main_Window extends JFrame {
     JButton btnNewButton;
-    JButton btnNewButton_1;
     JButton btnNewButton_2;
     JButton btnNewButton_4;
-    static User_Main_Window frame2=new User_Main_Window();
     private JPanel contentPane;
+    EstateSQL estateSQL;
+    User_Main_Window(EstateSQL estateSQL){
+        this.estateSQL = estateSQL;
+    }
     public void run() {
-        try {
-            frame2.init();
-            frame2.setVisible(true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setVisible(true);
     }
     void init(){
         setVisible(true);
@@ -37,9 +34,6 @@ public class User_Main_Window extends JFrame {
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                User_Window user=new User_Window();
-                user.run();
-                frame2.dispose();
             }
         });
 
@@ -49,9 +43,6 @@ public class User_Main_Window extends JFrame {
         btnNewButton_2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Payment_Window paymentWindow =new Payment_Window();
-                paymentWindow.run();
-                frame2.dispose();
             }
         });
 
@@ -61,9 +52,10 @@ public class User_Main_Window extends JFrame {
         btnNewButton_4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Login_Window mainInterface1=new Login_Window();
-                Login_Window.run();
-                frame2.dispose();
+                Login_Window login_window = new Login_Window(estateSQL);
+                login_window.init();
+                login_window.run();
+                User_Main_Window.super.dispose();
             }
         });
 
@@ -85,7 +77,5 @@ public class User_Main_Window extends JFrame {
         JLabel lblNewLabel_4 = new JLabel("<返回");
         lblNewLabel_4.setBounds(7, 250, 72, 26);
         panel.add(lblNewLabel_4);
-
-        frame2.setLocationRelativeTo(null);
     }
 }

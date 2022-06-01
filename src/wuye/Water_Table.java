@@ -97,9 +97,6 @@ public class Water_Table extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-				administratorMain.run();
-				frame2.dispose();
 			}
 		});
 

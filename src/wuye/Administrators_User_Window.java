@@ -16,7 +16,7 @@ public class Administrators_User_Window extends JFrame {
     private JTextField find;
     private JButton btnNewButton;
     private JButton btnNewButton_1;
-    static User_Window frame4 = new User_Window();
+    static Administrators_User_Window frame4 = new Administrators_User_Window();
     /**
      * Launch the application.
      */
@@ -25,7 +25,7 @@ public class Administrators_User_Window extends JFrame {
         try {
             frame4.init();
             frame4.setVisible(true);
-            frame4.setLocationRelativeTo(null);
+            //frame4.setLocationRelativeTo(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,6 +56,7 @@ public class Administrators_User_Window extends JFrame {
         lblNewLabel_1.setBounds(20, 100, 100, 50);
         contentPane.add(lblNewLabel_1);
 
+
         sex = new JTextField();
         sex.setBounds(102, 117, 155, 21);
         contentPane.add(sex);
@@ -78,7 +79,7 @@ public class Administrators_User_Window extends JFrame {
 
         RommNumber = new JTextField();
         RommNumber.setColumns(10);
-        RommNumber.setBounds(102, 216, 155, 21);
+        RommNumber.setBounds(102, 217, 155, 21);
         contentPane.add(RommNumber);
         RommNumber.setEditable(false);//文本框可否编辑
 
@@ -97,13 +98,13 @@ public class Administrators_User_Window extends JFrame {
         contentPane.add(lblNewLabel_1_4);
 
         find = new JTextField();//搜索文本框
-        find.setBounds(102, 267, 155, 21);
+        find.setBounds(102, 317, 155, 21);
         contentPane.add(find);
         find.setColumns(10);
         find.setEditable(true);//文本框可否编辑
 
         btnNewButton_1 = new JButton("搜索");//搜索按钮
-        btnNewButton_1.setBounds(470, 267, 93, 23);
+        btnNewButton_1.setBounds(470, 400, 93, 23);
         contentPane.add(btnNewButton_1);
 
         //获取用户信息
@@ -121,9 +122,6 @@ public class Administrators_User_Window extends JFrame {
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-                administratorMain.run();
-                frame4.dispose();
             }
         });
     }

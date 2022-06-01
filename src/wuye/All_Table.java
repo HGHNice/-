@@ -7,9 +7,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public class All_Table extends JFrame {
-
+	EstateSQL estateSQL;
 	private JPanel contentPane;
-	static All_Table frame4 = new All_Table();
 	private JButton btnNewButton;
 	/**
 	 * Launch the application.
@@ -18,14 +17,11 @@ public class All_Table extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	All_Table(EstateSQL estateSQL){
+		this.estateSQL = estateSQL;
+	}
 	public void run() {
-		try {
-			frame4.init();
-			frame4.setLocationRelativeTo(null);
-			frame4.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		setVisible(true);
 	}
 	void init() {
 		setTitle("总体统计");
@@ -71,9 +67,10 @@ public class All_Table extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-				administratorMain.run();
-				frame4.dispose();
+				Administrator_Main_Window administrator_main_window = new Administrator_Main_Window(estateSQL);
+				administrator_main_window.init();
+				administrator_main_window.run();
+				All_Table.super.dispose();
 			}
 		});
 	}

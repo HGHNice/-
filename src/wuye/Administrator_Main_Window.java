@@ -7,22 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Administrator_Main_Window extends JFrame {
+	EstateSQL estateSQL;
 	JButton btnNewButton;
 	JButton btnNewButton_1;
 	JButton btnNewButton_2;
 	JButton btnNewButton_4;
-	static Administrator_Main_Window frame1=new Administrator_Main_Window();
+	Administrator_Main_Window(EstateSQL estateSQL){
+		this.estateSQL = estateSQL;
+	}
 	private JPanel contentPane;
 	public void run() {
-		try {
-			frame1.init();
-			frame1.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			setVisible(true);
 	}
 	void init(){
-		setVisible(true);
 		setTitle("物业管理系统");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 511);
@@ -37,9 +34,6 @@ public class Administrator_Main_Window extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			User_Window user=new User_Window();
-			user.run();
-			frame1.dispose();
 			}
 		});
 
@@ -49,9 +43,10 @@ public class Administrator_Main_Window extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Water_Table waterTable =new Water_Table();
-				waterTable.run();
-				frame1.dispose();
+				All_Table all_table = new All_Table(estateSQL);
+				all_table.init();
+				all_table.run();
+				Administrator_Main_Window.super.dispose();
 			}
 		});
 
@@ -62,9 +57,6 @@ public class Administrator_Main_Window extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Payment_Window paymentWindow =new Payment_Window();
-				paymentWindow.run();
-				frame1.dispose();
 			}
 		});
 		btnNewButton_4 = new JButton("");  //总体统计按钮
@@ -73,9 +65,6 @@ public class Administrator_Main_Window extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				All_Table allTable =new All_Table();
-				allTable.run();
-				frame1.dispose();
 			}
 		});
 		btnNewButton_4 = new JButton("");//返回系统
@@ -84,9 +73,6 @@ public class Administrator_Main_Window extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Login_Window mainInterface1=new Login_Window();
-				Login_Window.run();
-				frame1.dispose();
 			}
 		});
 
@@ -116,8 +102,6 @@ public class Administrator_Main_Window extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("<返回");
 		lblNewLabel_4.setBounds(7, 250, 72, 26);
 		panel.add(lblNewLabel_4);
-
-		frame1.setLocationRelativeTo(null);
 	}
 }
 
