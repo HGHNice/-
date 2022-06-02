@@ -187,7 +187,7 @@ public class EstateSQL {
     }
     boolean addOwner(int RoomNumber,String Password,String Name,String Mobile,String sex){ //添加业主
         boolean tag = true;
-        String sql = "INSERT INTO owner (Room_number, pwd,mobile,Room_name,sex) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+",'"+sex+"')";
+        String sql = "INSERT INTO owner (Room_number, pwd,mobile,ownerName,sex,flag) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+"','"+sex+"',0)";
         try {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
@@ -230,7 +230,7 @@ public class EstateSQL {
         return tag;
     }
     //获取业主信息
-    public void getinfo(String id){
+    public User getinfo(String id){
         ResultSet rs = null;
         String sql = "SELECT * FROM owner WHERE Room_number = '"+id+"'";
         try {
@@ -243,11 +243,26 @@ public class EstateSQL {
             while (rs.next()) {
                 user.setUser_account(rs.getString("Room_name"));
                 user.setSex(rs.getString("sex"));
-                user.setMobile_phone("mobile");
-                user.setRoom_number(Integer.valueOf("Room_number"));
+                user.setOwner_name(rs.getString("ownerName"));
+                user.setMobile_phone(rs.getString("mobile"));
+                user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return user;
+    }
+    public boolean isAdministrator(String id){
+        ResultSet rs = null;
+        int flag = 0;
+        String sql = "SELECT flag FROM owner WHERE Room_number = '"+id+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+            rs.next();
+            flag = rs.getInt("flag");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag == 1;
     }
 }

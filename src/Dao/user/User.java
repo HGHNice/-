@@ -3,14 +3,21 @@ package Dao.user;
 public class User {
     private Integer  Room_number;
     private String   Room_name;
+    private String   Owner_name;
     private String   Housing_situation;
     private String   Family_situation;
     private String   User_account;
-    private String setUser_password;
+    private String   setUser_password;
     private String   mobile_phone;
     private String   sex;
 
     //获取用户性别
+    public String getOwner_name(){
+        return Owner_name;
+    }
+    public void setOwner_name(String name){
+        this.Owner_name = name;
+    }
     public String getSex() {
         return sex;
     }

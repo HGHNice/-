@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+//总体窗口
 public class All_Table extends JFrame {
-
+	EstateSQL estateSQL;
 	private JPanel contentPane;
-	static All_Table frame4 = new All_Table();
 	private JButton btnNewButton;
 	/**
 	 * Launch the application.
@@ -18,19 +18,17 @@ public class All_Table extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	All_Table(EstateSQL estateSQL){
+		this.estateSQL = estateSQL;
+	}
 	public void run() {
-		try {
-			frame4.init();
-			frame4.setLocationRelativeTo(null);
-			frame4.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		setVisible(true);
+		setLocationRelativeTo(null);
 	}
 	void init() {
 		setTitle("总体统计");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -66,14 +64,15 @@ public class All_Table extends JFrame {
 			}
 		});
 		btnNewButton = new JButton("返回");//返回
-		btnNewButton.setBounds(20, 220, 93, 23);
+		btnNewButton.setBounds(20, 400, 100, 35);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Administrator_Main_Window administratorMain =new Administrator_Main_Window();
-				administratorMain.run();
-				frame4.dispose();
+				Administrator_Main_Window administrator_main_window =new Administrator_Main_Window(estateSQL);
+				administrator_main_window.init();
+				administrator_main_window.run();
+				All_Table.super.dispose();
 			}
 		});
 	}

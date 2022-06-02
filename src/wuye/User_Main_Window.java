@@ -1,5 +1,7 @@
 package wuye;
 
+import Dao.user.User;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
@@ -7,51 +9,54 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class User_Main_Window extends JFrame {
+    User user;
     JButton btnNewButton;
-    JButton btnNewButton_1;
     JButton btnNewButton_2;
     JButton btnNewButton_4;
-    static User_Main_Window frame2=new User_Main_Window();
     private JPanel contentPane;
+    EstateSQL estateSQL;
+    User_Main_Window(EstateSQL estateSQL){
+        this.estateSQL = estateSQL;
+    }
     public void run() {
-        try {
-            frame2.init();
-            frame2.setVisible(true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setVisible(true);
+        setLocationRelativeTo(null);
     }
     void init(){
-        setVisible(true);
         setTitle("物业管理系统");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 800, 511);
+        setBounds(100, 100, 800, 500);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        btnNewButton = new JButton("");   //业主基本信息按钮
+        //业主基本信息按钮
+        btnNewButton = new JButton("");
         btnNewButton.setBounds(80, 100, 108, 35);
         contentPane.add(btnNewButton);
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                User_Window user=new User_Window();
-                user.run();
-                frame2.dispose();
+                User_Window_FU user_window_fu = new User_Window_FU(estateSQL);
+                user_window_fu.user = estateSQL.getinfo(String.valueOf(user.getRoom_number()));
+                user_window_fu.init();
+                user_window_fu.run();
+                User_Main_Window.super.dispose();
             }
         });
 
-        btnNewButton_2 = new JButton("");          //缴费情况按钮
+        //缴费情况按钮
+        btnNewButton_2 = new JButton("");
         btnNewButton_2.setBounds(620, 100, 108, 35);
         contentPane.add(btnNewButton_2);
         btnNewButton_2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Payment_Window paymentWindow =new Payment_Window();
-                paymentWindow.run();
-                frame2.dispose();
+                Payment_Window_FU payment_window_fu = new Payment_Window_FU(estateSQL);
+                payment_window_fu.init();
+                payment_window_fu.run();
+                User_Main_Window.super.dispose();
             }
         });
 
@@ -61,9 +66,10 @@ public class User_Main_Window extends JFrame {
         btnNewButton_4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Login_Window mainInterface1=new Login_Window();
-                Login_Window.run();
-                frame2.dispose();
+                Login_Window login_window = new Login_Window(estateSQL);
+                login_window.init();
+                login_window.run();
+                User_Main_Window.super.dispose();
             }
         });
 
@@ -85,7 +91,5 @@ public class User_Main_Window extends JFrame {
         JLabel lblNewLabel_4 = new JLabel("<返回");
         lblNewLabel_4.setBounds(7, 250, 72, 26);
         panel.add(lblNewLabel_4);
-
-        frame2.setLocationRelativeTo(null);
     }
 }
