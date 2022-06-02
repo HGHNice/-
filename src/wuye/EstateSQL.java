@@ -185,9 +185,9 @@ public class EstateSQL {
         }
         return tag;
     }
-    boolean addOwner(int RoomNumber,String Password,String Name,String Mobile,String sex){ //添加业主
+    boolean addOwner(int RoomNumber,String Password,String Name,String Mobile,String sex,String housing_situation,String house_person,String house_name){ //添加业主
         boolean tag = true;
-        String sql = "INSERT INTO owner (Room_number, pwd,mobile,ownerName,sex,flag) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+"','"+sex+"',0)";
+        String sql = "INSERT INTO owner (Room_number, pwd,mobile,ownerName,sex,Housing_situation,Family_situation,Room_name,flag) VALUES ("+RoomNumber+", '"+Password+"','"+Mobile+"','"+Name+"','"+sex+"','"+housing_situation+"','"+house_person+"','"+house_name+"',0)";
         try {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
@@ -245,6 +245,9 @@ public class EstateSQL {
                 user.setSex(rs.getString("sex"));
                 user.setOwner_name(rs.getString("ownerName"));
                 user.setMobile_phone(rs.getString("mobile"));
+                user.setFamily_situation(rs.getString("Family_situation"));
+                user.setHousing_situation(rs.getString("Housing_situation"));
+                user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
                 user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
             }
         } catch (SQLException e) {

@@ -14,7 +14,10 @@ public class Register_Window extends JFrame {
 	private JTextField pwd;
 	private JTextField mobile;
 	private JTextField Room_number;
+	private JTextField house_name;
 	private JTextField sextext;
+	private JTextField house_person;
+	private JTextField house_payment_information;
 	private JButton btnNewButton;
 	Register_Window(EstateSQL es){
 		estateSQL = es;
@@ -94,6 +97,39 @@ public class Register_Window extends JFrame {
 		contentPane.add(sextext);
 		sextext.setEditable(true);//文本框可否编辑
 
+		JLabel lblNewLabel_5 = new JLabel("家庭信息：");
+		lblNewLabel_5.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_5.setBounds(250, 300, 100, 50);
+		contentPane.add(lblNewLabel_5);
+
+		house_payment_information = new JTextField();
+		house_payment_information.setColumns(10);
+		house_payment_information.setBounds(350, 315, 155, 25);
+		contentPane.add(house_payment_information);
+		house_payment_information.setEditable(true);//文本框可否编辑
+
+		JLabel lblNewLabel_6 = new JLabel("家庭成员：");
+		lblNewLabel_6.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_6.setBounds(250, 350, 100, 50);
+		contentPane.add(lblNewLabel_6);
+
+		house_person = new JTextField();
+		house_person.setColumns(10);
+		house_person.setBounds(350, 365, 155, 25);
+		contentPane.add(house_person);
+		house_person.setEditable(true);//文本框可否编辑
+
+		JLabel lblNewLabel_7 = new JLabel("房屋名称：");
+		lblNewLabel_7.setFont(new Font("宋体",Font.BOLD,15));
+		lblNewLabel_7.setBounds(250, 400, 100, 50);
+		contentPane.add(lblNewLabel_7);
+
+		house_name = new JTextField();
+		house_name.setColumns(10);
+		house_name.setBounds(350, 420, 155, 25);
+		contentPane.add(house_name);
+		house_name.setEditable(true);//文本框可否编辑
+
 		//返回按钮
 		btnNewButton = new JButton("返回");
 		btnNewButton.setBounds(20, 400, 100, 35);
@@ -122,7 +158,7 @@ public class Register_Window extends JFrame {
 					mobile.setEditable(false);
 					Room_number.setEditable(false);
 				}else if (flag==0){
-					if (estateSQL.addOwner(Integer.parseInt(Room_number.getText()),pwd.getText(),name.getText(),mobile.getText(),sextext.getText())){
+					if (estateSQL.addOwner(Integer.parseInt(Room_number.getText()),pwd.getText(),name.getText(),mobile.getText(),sextext.getText(),house_payment_information.getText(),house_person.getText(),house_name.getText())){
 						JOptionPane.showMessageDialog(null,"保存成功","提示窗口",JOptionPane.WARNING_MESSAGE);
 					}else{
 						JOptionPane.showMessageDialog(null,"添加失败","提示窗口",JOptionPane.WARNING_MESSAGE);
