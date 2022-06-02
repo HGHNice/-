@@ -99,6 +99,7 @@ public class Login_Window extends JFrame implements ActionListener {
 					Administrator_Main_Window administrator_main_window = new Administrator_Main_Window(estateSQL);
 					administrator_main_window.init();
 					administrator_main_window.user = estateSQL.getinfo(String.valueOf(comboBox.getSelectedItem()));
+					User_Window_FA.user = estateSQL.getinfo(String.valueOf(comboBox.getSelectedItem()));
 					dispose();
 					JOptionPane.showMessageDialog(null,"登陆成功！");
 					administrator_main_window.run();

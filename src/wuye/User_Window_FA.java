@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 //业主基本信息ADMINISTRATOR
 
 public class User_Window_FA extends JFrame {
-    User user;
+    static User user;
     EstateSQL estateSQL;
     private JPanel contentPane;
     private JTextField userName;
@@ -101,14 +101,11 @@ public class User_Window_FA extends JFrame {
         FS.setColumns(10);
         FS.setEditable(false);//文本框可否编辑
 
-        //获取用户信息
-//		User user = new User();
-//		EstateSQL estateSQL = new EstateSQL("hghnb","114514");
-//		estateSQL.getinfo(String.valueOf("1"));
-//		userName.setText(user.getRoom_name());
-//		mobile.setText(user.getMobile_phone());
-//		sex.setText(user.getSex());
-//		RommNumber.setText(String.valueOf(user.getRoom_number()));
+        userName.setText(user.getOwner_name());
+        sex.setText(user.getSex());
+        mobile.setText(user.getMobile_phone());
+        RommNumber.setText(String.valueOf(user.getRoom_number()));
+        FS.setText(user.getFamily_situation());
 
         btnNewButton = new JButton("返回");//返回
         btnNewButton.setBounds(20, 400, 100, 35);
