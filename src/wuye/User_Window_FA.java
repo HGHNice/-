@@ -18,9 +18,10 @@ public class User_Window_FA extends JFrame {
     private JTextField sex;
     private JTextField mobile;
     private JTextField FS;
+    private JTextField find;
     private JTextField RommNumber;
     private JButton btnNewButton;
-
+    private JButton btnNewButton_1;
     User_Window_FA(EstateSQL estateSQL){
         this.estateSQL = estateSQL;
     }
@@ -106,6 +107,22 @@ public class User_Window_FA extends JFrame {
         mobile.setText(user.getMobile_phone());
         RommNumber.setText(String.valueOf(user.getRoom_number()));
         FS.setText(user.getFamily_situation());
+
+        JLabel lblNewLabel_5 = new JLabel("门牌号搜索：");
+        lblNewLabel_5.setFont(new Font("宋体",Font.BOLD,15));
+        lblNewLabel_5.setBounds(250, 300, 100, 50);
+        contentPane.add(lblNewLabel_5);
+
+        find = new JTextField();//搜索文本框
+        find.setBounds(350, 313, 155, 25);
+        contentPane.add(find);
+        find.setColumns(10);
+        find.setEditable(true);//文本框可否编辑
+
+        btnNewButton_1 = new JButton("搜索");//搜索按钮
+        btnNewButton_1.setBounds(550, 313, 93, 23);
+        contentPane.add(btnNewButton_1);
+
 
         btnNewButton = new JButton("返回");//返回
         btnNewButton.setBounds(20, 400, 100, 35);
