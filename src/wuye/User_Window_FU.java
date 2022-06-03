@@ -105,14 +105,6 @@ public class User_Window_FU extends JFrame {
 		FS.setText(user.getFamily_situation());
 		FS.setEditable(false);//文本框可否编辑
 
-		//获取用户信息
-//		User user = new User();
-//		EstateSQL estateSQL = new EstateSQL("hghnb","114514");
-//		estateSQL.getinfo(String.valueOf("1"));
-//		userName.setText(user.getRoom_name());
-//		mobile.setText(user.getMobile_phone());
-//		sex.setText(user.getSex());
-//		RommNumber.setText(String.valueOf(user.getRoom_number()));
 
 		btnNewButton = new JButton("返回");//返回
 		btnNewButton.setBounds(20, 400, 100, 35);

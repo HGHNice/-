@@ -268,4 +268,63 @@ public class EstateSQL {
         }
         return flag == 1;
     }
+//查询业主所有物业费项
+    public String[] find_payment(String find_str) {
+        String[] str = new String[6];
+        ResultSet rs = null;
+        String sql = "SELECT * FROM notice WHERE Room_number = '"+find_str+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+            rs.next();
+            str[0] = rs.getString("Total_property_management_fee");
+            str[1] = rs.getString("WEG_Charges");
+            str[2] = rs.getString("TV_fee");
+            str[3] = rs.getString("Heating_cost");
+            str[4] = rs.getString("house_payment_information");
+
+        } catch (SQLException e) {
+            System.out.println(("查询失败！"));
+        }
+        return str;
+    }
+    //查找业主
+    public User find_user(String find_str) {
+        ResultSet rs = null;
+        String sql = "SELECT * FROM owner WHERE Room_number = '"+find_str+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        User user = new User();
+        try {
+            while (rs.next()) {
+                user.setUser_account(rs.getString("Room_name"));
+                user.setSex(rs.getString("sex"));
+                user.setOwner_name(rs.getString("ownerName"));
+                user.setMobile_phone(rs.getString("mobile"));
+                user.setFamily_situation(rs.getString("Family_situation"));
+                user.setHousing_situation(rs.getString("Housing_situation"));
+                user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
+                user.setRoom_number(Integer.valueOf(rs.getString("Room_number")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+}
+    //查询业主余额
+    public int find_banlance(String find_str) {
+        ResultSet rs = null;
+        int banlance = 0;
+        String sql = "SELECT * FROM owner WHERE Room_number = '"+find_str+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+            rs.next();
+            banlance = rs.getInt("balance");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return banlance;
+    }
 }
