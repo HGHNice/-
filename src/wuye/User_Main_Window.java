@@ -54,6 +54,7 @@ public class User_Main_Window extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Payment_Window_FU payment_window_fu = new Payment_Window_FU(estateSQL);
+                payment_window_fu.user =user;
                 payment_window_fu.init();
                 payment_window_fu.run();
                 User_Main_Window.super.dispose();

@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="400efb76-121b-4129-94d6-2f0aac29cd4c" name="变更" comment="完善了业主功能">
+    <list default="true" id="400efb76-121b-4129-94d6-2f0aac29cd4c" name="变更" comment="6月3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Payment_Window_FA$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Payment_Window_FA$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Payment_Window_FA.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Payment_Window_FA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Window_FA$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Window_FA$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Window_FA.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Window_FA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Window_FU$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Window_FU$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Window_FU.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Window_FU.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wuye/EstateSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/EstateSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/Payment_Window_FA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Payment_Window_FA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/User_Window_FA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/User_Window_FA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/User_Window_FU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/User_Window_FU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wuye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wuye/Payment_Window_FU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Payment_Window_FU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wuye/User_Main_Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/User_Main_Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wuye/Water_Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Water_Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1654089459058</updated>
       <workItem from="1654171746626" duration="1268000" />
-      <workItem from="1654264598412" duration="6798000" />
+      <workItem from="1654264598412" duration="7204000" />
+      <workItem from="1654331863408" duration="3043000" />
     </task>
     <task id="LOCAL-00001" summary="去掉了冗余源码，修了数据库，完善了部分功能">
       <created>1654161608020</created>
@@ -115,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654184729157</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="6月3">
+      <created>1654271847193</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654271847193</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +150,23 @@
     <MESSAGE value="去掉了冗余源码，修了数据库，完善了部分功能" />
     <MESSAGE value="完善了部分功能" />
     <MESSAGE value="完善了业主功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了业主功能" />
+    <MESSAGE value="6月3" />
+    <option name="LAST_COMMIT_MESSAGE" value="6月3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/wuye/Payment_Window_FU.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/wuye/Login_Window.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

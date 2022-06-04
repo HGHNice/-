@@ -7,6 +7,8 @@ public class Main {
         Login_Window login_window = new Login_Window(estateSQL);
         login_window.init();
         login_window.run();
+
+
         /*Administrator_Main_Window a = new Administrator_Main_Window(estateSQL);
         a.init();
         a.run();*/

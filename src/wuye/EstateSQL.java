@@ -2,7 +2,12 @@ package wuye;
 import Dao.user.User;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class EstateSQL {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String nowdate = dateFormat.format(new Date());
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     String DB_URL;
     String USER;
@@ -326,5 +331,18 @@ public class EstateSQL {
             e.printStackTrace();
         }
         return banlance;
+    }
+//插入各种费用信息
+    public boolean insert_fee(String id, String PMF, String WEG_Charges, String TV_fee, String Heating_cost, String HPI) {
+    ResultSet rs = null;
+    boolean tag = false;
+    String sql = "INSERT INTO notice(Room_number,Total_property_management_fee,WEG_Charges,TV_fee,Heating_cost,house_payment_information,start_time) VALUES('"+id+"','"+PMF+"','"+WEG_Charges+"','"+TV_fee+"','"+Heating_cost+"','"+HPI+"','"+nowdate+"')";
+    try {
+        stmt.executeUpdate(sql);
+        tag = true;
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return tag;
     }
 }
