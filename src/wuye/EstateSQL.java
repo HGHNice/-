@@ -273,7 +273,7 @@ public class EstateSQL {
         }
         return flag == 1;
     }
-//查询业主所有物业费项
+    //查询业主所有物业费项
     public String[] find_payment(String find_str) {
         String[] str = new String[6];
         ResultSet rs = null;
@@ -317,7 +317,7 @@ public class EstateSQL {
             e.printStackTrace();
         }
         return user;
-}
+    }
     //查询业主余额
     public int find_banlance(String find_str) {
         ResultSet rs = null;
@@ -332,17 +332,148 @@ public class EstateSQL {
         }
         return banlance;
     }
-//插入各种费用信息
+    //插入各种费用信息
     public boolean insert_fee(String id, String PMF, String WEG_Charges, String TV_fee, String Heating_cost, String HPI) {
-    ResultSet rs = null;
-    boolean tag = false;
-    String sql = "INSERT INTO notice(Room_number,Total_property_management_fee,WEG_Charges,TV_fee,Heating_cost,house_payment_information,start_time) VALUES('"+id+"','"+PMF+"','"+WEG_Charges+"','"+TV_fee+"','"+Heating_cost+"','"+HPI+"','"+nowdate+"')";
-    try {
-        stmt.executeUpdate(sql);
-        tag = true;
-    } catch (SQLException e) {
-        e.printStackTrace();
+        ResultSet rs = null;
+        boolean tag = false;
+        String sql = "INSERT INTO notice(Room_number,Total_property_management_fee,WEG_Charges,TV_fee,Heating_cost,house_payment_information,start_time) VALUES('"+id+"','"+PMF+"','"+WEG_Charges+"','"+TV_fee+"','"+Heating_cost+"','"+HPI+"','"+nowdate+"')";
+        try {
+            stmt.executeUpdate(sql);
+            tag = true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tag;
     }
-    return tag;
+
+    public boolean isowner(String id) {
+        ResultSet rs = null;
+        boolean tag = false;
+        String sql = "SELECT * FROM owner WHERE Room_number = '"+id+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+            if (rs.next()){
+                tag = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tag;
+    }
+
+    public Object[][] getMonthTable() {
+        ResultSet rs = null;
+        String sql = "SELECT * FROM notice where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(start_time)";
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        int i = 0;
+        try {
+            while (true) {
+                assert rs != null;
+                if (!rs.next()) break;
+                i++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Object[][] data = new Object[i][60];
+        try {
+            rs.beforeFirst();
+            while (rs.next()) {
+                data[i-1][0] = rs.getString("Room_number");
+                data[i-1][1] = rs.getString("WEG_Charges");
+                data[i-1][2] = rs.getString("Total_property_management_fee");
+                data[i-1][3] = rs.getString("TV_fee");
+                data[i-1][4] = rs.getString("Heating_cost");
+                data[i-1][5] = rs.getString("house_payment_information");
+                data[i-1][6] = rs.getString("start_time");
+                i--;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    public Object[] getMonthTableTitle() {
+        Object[] title = {"房间号","水电费","物业费","电视费","供暖费","房屋缴费信息","缴费时间"};
+        return title;
+    }
+
+    public Object[][] getQuarterTable() {
+        ResultSet rs = null;
+        String sql = "SELECT * FROM notice where DATE_SUB(CURDATE(), INTERVAL 90 DAY) <= date(start_time)";
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        int i = 0;
+        try {
+            while (true) {
+                assert rs != null;
+                if (!rs.next()) break;
+                i++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Object[][] data = new Object[i][60];
+        try {
+            rs.beforeFirst();
+            while (rs.next()) {
+                data[i-1][0] = rs.getString("Room_number");
+                data[i-1][1] = rs.getString("WEG_Charges");
+                data[i-1][2] = rs.getString("Total_property_management_fee");
+                data[i-1][3] = rs.getString("TV_fee");
+                data[i-1][4] = rs.getString("Heating_cost");
+                data[i-1][5] = rs.getString("house_payment_information");
+                data[i-1][6] = rs.getString("start_time");
+                i--;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    public Object[][] getYearTable() {
+        ResultSet rs = null;
+        String sql = "SELECT * FROM notice where DATE_SUB(CURDATE(), INTERVAL 365 DAY) <= date(start_time)";
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        int i = 0;
+        try {
+            while (true) {
+                assert rs != null;
+                if (!rs.next()) break;
+                i++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Object[][] data = new Object[i][60];
+        try {
+            rs.beforeFirst();
+            while (rs.next()) {
+                data[i-1][0] = rs.getString("Room_number");
+                data[i-1][1] = rs.getString("WEG_Charges");
+                data[i-1][2] = rs.getString("Total_property_management_fee");
+                data[i-1][3] = rs.getString("TV_fee");
+                data[i-1][4] = rs.getString("Heating_cost");
+                data[i-1][5] = rs.getString("house_payment_information");
+                data[i-1][6] = rs.getString("start_time");
+                i--;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data;
     }
 }

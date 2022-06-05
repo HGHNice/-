@@ -41,7 +41,12 @@ public class All_Table extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//月报表
+				Month_Table month_Table = new Month_Table(estateSQL);
+				month_Table.init();
+				month_Table.run();
+
 			}
+
 		});
 
 		btnNewButton = new JButton("季报表");//季报表按钮
@@ -51,6 +56,9 @@ public class All_Table extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//季报表
+				Quarter_Table quarter_Table = new Quarter_Table(estateSQL);
+				quarter_Table.init();
+				quarter_Table.run();
 			}
 		});
 
@@ -61,6 +69,9 @@ public class All_Table extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//年报表
+				Year_Table year_Table = new Year_Table(estateSQL);
+				year_Table.init();
+				year_Table.run();
 			}
 		});
 		btnNewButton = new JButton("返回");//返回

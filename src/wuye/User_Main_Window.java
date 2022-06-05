@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class User_Main_Window extends JFrame {
-    User user;
+    static User user;
     JButton btnNewButton;
     JButton btnNewButton_2;
     JButton btnNewButton_4;

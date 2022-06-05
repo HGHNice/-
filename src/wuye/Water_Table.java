@@ -31,8 +31,8 @@ public class Water_Table extends JFrame {
 	 * Create the frame.
 	 */
 	public void run() {
-			setLocationRelativeTo(null);
-			setVisible(true);
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 	void init() {
 		setTitle("费用抄表");
@@ -133,13 +133,19 @@ public class Water_Table extends JFrame {
 				int flag=JOptionPane.showConfirmDialog(null,"是否确认保存","提示窗口",JOptionPane.WARNING_MESSAGE);
 				if (flag==0){
 					String id=room_number.getText();
-					boolean insert=estateSQL.insert_fee(id,Property_management_fees.getText(),WEG_Charges.getText(),TV_fee.getText(),Heating_cost.getText(),house_payment_information.getText());
-					if (insert){
-						JOptionPane.showMessageDialog(null,"保存成功","提示窗口",JOptionPane.WARNING_MESSAGE);
+					//判断用户是否存在
+					if(estateSQL.isowner(id)){
+						boolean insert=estateSQL.insert_fee(id,Property_management_fees.getText(),WEG_Charges.getText(),TV_fee.getText(),Heating_cost.getText(),house_payment_information.getText());
+						if (insert){
+							JOptionPane.showMessageDialog(null,"保存成功","提示窗口",JOptionPane.WARNING_MESSAGE);
+						}
+						else{
+							JOptionPane.showMessageDialog(null,"保存失败","提示窗口",JOptionPane.WARNING_MESSAGE);
+						}
+					}else {
+						JOptionPane.showMessageDialog(null,"该房间号不存在","提示窗口",JOptionPane.WARNING_MESSAGE);
 					}
-					else{
-						JOptionPane.showMessageDialog(null,"保存失败","提示窗口",JOptionPane.WARNING_MESSAGE);
-					}
+
 				}
 			}
 		});

@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 //缴费情况USER
 public class Payment_Window_FU extends JFrame {
 	EstateSQL estateSQL;
-	User user;
+	User user=User_Main_Window.user;
 	private JPanel contentPane;
 	private JButton btnNewButton;
 	private JTextField Arrearage;
@@ -87,7 +87,7 @@ public class Payment_Window_FU extends JFrame {
 		contentPane.add(TV_fee);
 		TV_fee.setEditable(false);//文本框可否编辑
 
-		JLabel lblNewLabel_4 = new JLabel("供暖费：");
+		JLabel lblNewLabel_4 = new JLabel("供nuan费：");
 		lblNewLabel_4.setFont(new Font("宋体",Font.BOLD,15));
 		lblNewLabel_4.setBounds(250, 250, 100, 50);
 		contentPane.add(lblNewLabel_4);
