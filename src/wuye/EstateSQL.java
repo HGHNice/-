@@ -260,6 +260,47 @@ public class EstateSQL {
         }
         return user;
     }
+    //获取管理员信息
+    public User getAdInfo(String id){
+        ResultSet rs = null;
+        String sql = "SELECT * FROM Property_management_personnel WHERE number = '"+id+"'";
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        User user = new User();
+        try {
+            while (rs.next()) {
+                user.setUser_account(rs.getString("number"));
+                user.setSex(rs.getString("sex"));
+                user.setOwner_name(rs.getString("name"));
+                user.setMobile_phone(rs.getString("mobile"));
+                user.setDepartment(rs.getString("department"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+    //管理员登录
+    boolean AdLogin(String id, String pwd) throws SQLException {
+        boolean tag = false;
+        ResultSet rs = null;
+        User user = new User();
+        String sql = "SELECT * FROM Property_management_personnel WHERE number = '"+id+"' AND pwd = '"+pwd+"'";
+        rs = stmt.executeQuery(sql);
+        try {
+            if (rs.next()){
+                if (rs.getString("pwd").equals(pwd)){
+                    tag = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tag;
+    }
     public boolean isAdministrator(String id){
         ResultSet rs = null;
         int flag = 0;

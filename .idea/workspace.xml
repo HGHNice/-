@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="400efb76-121b-4129-94d6-2f0aac29cd4c" name="变更" comment="6月3">
+    <list default="true" id="400efb76-121b-4129-94d6-2f0aac29cd4c" name="变更" comment="总">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f9090ba-df2b-421f-8b1b-cb2c63621191.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5f9090ba-df2b-421f-8b1b-cb2c63621191.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/All_Table$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/All_Table$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/All_Table$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/All_Table$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/All_Table$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/All_Table$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/All_Table$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/All_Table$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/All_Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/All_Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Dao/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dao/user/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/wuye/Login_Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Login_Window$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/wuye/Login_Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Login_Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Payment_Window_FU$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Payment_Window_FU$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Payment_Window_FU.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Payment_Window_FU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Main_Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Main_Window$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Main_Window$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Main_Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Main_Window$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Main_Window$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Main_Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Main_Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/User_Window_FU$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/User_Window_FU$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Water_Table$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Water_Table$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Water_Table$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Water_Table$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Water_Table$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Water_Table$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Water_Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Water_Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/All_Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/All_Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wuye/EstateSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/EstateSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/Payment_Window_FU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Payment_Window_FU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/User_Main_Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/User_Main_Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/Water_Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Water_Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wuye/Login_Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Login_Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +28,8 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -76,7 +61,7 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="wuye.Main" />
       <module name="wuye" />
@@ -90,9 +75,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="t" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dao.t" />
+      <module name="wuye" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.t" />
       </list>
     </recent_temporary>
   </component>
@@ -110,6 +109,15 @@
       <workItem from="1654337603845" duration="61000" />
       <workItem from="1654397723649" duration="4777000" />
       <workItem from="1654407323503" duration="1357000" />
+      <workItem from="1654410123957" duration="347000" />
+      <workItem from="1654614476518" duration="2643000" />
+      <workItem from="1654653360777" duration="1162000" />
+      <workItem from="1654654542383" duration="1169000" />
+      <workItem from="1654689182537" duration="37000" />
+      <workItem from="1654689368882" duration="308000" />
+      <workItem from="1654689690022" duration="191000" />
+      <workItem from="1654690062149" duration="1421000" />
+      <workItem from="1654691652451" duration="919000" />
     </task>
     <task id="LOCAL-00001" summary="去掉了冗余源码，修了数据库，完善了部分功能">
       <created>1654161608020</created>
@@ -139,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654271847193</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="总">
+      <created>1654410187634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654410187635</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +188,8 @@
     <MESSAGE value="完善了部分功能" />
     <MESSAGE value="完善了业主功能" />
     <MESSAGE value="6月3" />
-    <option name="LAST_COMMIT_MESSAGE" value="6月3" />
+    <MESSAGE value="总" />
+    <option name="LAST_COMMIT_MESSAGE" value="总" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

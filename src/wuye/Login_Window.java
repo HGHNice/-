@@ -13,6 +13,8 @@ public class Login_Window extends JFrame implements ActionListener {
 	JComboBox comboBox;
 	JButton btnNewButton_3;
 	JButton btnNewButton_8;
+
+	private JTextField name;
 	private JPanel contentPane = new JPanel();
 	private JPasswordField passwordField;
 	Login_Window(EstateSQL estateSQL){
@@ -31,11 +33,22 @@ public class Login_Window extends JFrame implements ActionListener {
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.BLACK);
 		panel.setToolTipText("");
-		panel.setBorder(
-				new TitledBorder(null, "登录", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, "登录", TitledBorder.CENTER, TitledBorder.TOP, null, null));
 		panel.setBounds(201, 98, 400, 206);
 		contentPane.add(panel);
 		panel.setLayout(null);
+
+		comboBox = new JComboBox();
+		comboBox.addItem("请选择登录类型");
+		comboBox.addItem("管理员");
+		comboBox.addItem("业主");
+		comboBox.setForeground(Color.BLACK);
+		comboBox.setToolTipText("");
+		comboBox.setBounds(138, 150, 123, 25);
+		panel.add(comboBox);
+		name = new JTextField();//账号文本框
+		name.setBounds(138, 66, 123, 21);
+		panel.add(name);
 
 		JLabel lblNewLabel_1 = new JLabel("请输入账号");
 		lblNewLabel_1.setToolTipText("");
@@ -49,13 +62,6 @@ public class Login_Window extends JFrame implements ActionListener {
 		JLabel lblNewLabel_2 = new JLabel("\u5BC6\u7801\uFF1A");
 		lblNewLabel_2.setBounds(66, 112, 96, 25);
 		panel.add(lblNewLabel_2);
-
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(estateSQL.getOwnerIde()));
-		comboBox.setForeground(Color.BLACK);
-		comboBox.setToolTipText("");
-		comboBox.setBounds(138, 66, 123, 25);
-		panel.add(comboBox);
 
 		JLabel lblNewLabel_3 = new JLabel("<注册");
 		lblNewLabel_3.setToolTipText("");
@@ -94,24 +100,25 @@ public class Login_Window extends JFrame implements ActionListener {
 		try {
 			if (String.valueOf(passwordField.getPassword()).equals("")){
 				JOptionPane.showMessageDialog(null, "请输入密码");
-			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))){
-				if(estateSQL.isAdministrator(String.valueOf(comboBox.getSelectedItem()))){
+			}else if (String.valueOf(comboBox.getSelectedItem()).equals("管理员")){
+				if(estateSQL.AdLogin(name.getText(), String.valueOf(passwordField.getPassword()))){
 					Administrator_Main_Window administrator_main_window = new Administrator_Main_Window(estateSQL);
 					administrator_main_window.init();
-					administrator_main_window.user = estateSQL.getinfo(String.valueOf(comboBox.getSelectedItem()));
-					User_Window_FA.user = estateSQL.getinfo(String.valueOf(comboBox.getSelectedItem()));
+					administrator_main_window.user = estateSQL.getAdInfo(String.valueOf(name.getText()));
+					User_Window_FA.user = estateSQL.getinfo(String.valueOf(name.getText()));
 					dispose();
 					JOptionPane.showMessageDialog(null,"登陆成功！");
 					administrator_main_window.run();
-				}else{
-					User_Main_Window user_Main_Window =new User_Main_Window(estateSQL);
-					user_Main_Window.init();
-					user_Main_Window.user = estateSQL.getinfo(String.valueOf(comboBox.getSelectedItem()));
-					dispose();
-					JOptionPane.showMessageDialog(null,"登陆成功！");
-					user_Main_Window.run();
 				}
-			}else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))==false){
+			}else if (estateSQL.ownerLogin(name.getText(), String.valueOf(passwordField.getPassword()))){
+				User_Main_Window user_Main_Window =new User_Main_Window(estateSQL);
+				user_Main_Window.init();
+				user_Main_Window.user = estateSQL.getinfo(String.valueOf(name.getText()));
+				dispose();
+				JOptionPane.showMessageDialog(null,"登陆成功！");
+				user_Main_Window.run();
+			}
+			else if (estateSQL.ownerLogin(String.valueOf(comboBox.getSelectedItem()),String.valueOf(passwordField.getPassword()))==false){
 				JOptionPane.showMessageDialog(null,"账号或密码错误！");
 			}
 		} catch (SQLException ex) {

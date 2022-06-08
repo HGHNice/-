@@ -11,6 +11,10 @@ public class User {
     private String   mobile_phone;
     private String   sex;
 
+    private String department;
+
+
+
     //获取用户性别
     public String getOwner_name(){
         return Owner_name;
@@ -82,5 +86,13 @@ public class User {
 
     public void setFamily_situation(String family_situation) {
         Family_situation = family_situation;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 }
