@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400efb76-121b-4129-94d6-2f0aac29cd4c" name="变更" comment="总">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f9090ba-df2b-421f-8b1b-cb2c63621191.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5f9090ba-df2b-421f-8b1b-cb2c63621191.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dao/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dao/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/EstateSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Login_Window$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Login_Window$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/wuye/Login_Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wuye/Login_Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dao/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/EstateSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/EstateSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wuye/Login_Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wuye/Login_Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_2_21_14___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_2_21_14___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +27,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="finall" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
